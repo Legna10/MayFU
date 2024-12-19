@@ -1,0 +1,8 @@
+<resources>
+    <string name="MeyFu">MeyFu</string>
+
+    <array name="gender_options">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+</resources>

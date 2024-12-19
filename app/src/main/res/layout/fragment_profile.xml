@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F8D6">
+
+    <!-- Input Weight with unit (kg) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weightInputLayout"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Enter Weight">
+
+        <!-- EditText for entering weight -->
+        <EditText
+            android:id="@+id/etWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:importantForAccessibility="yes"
+            android:contentDescription="Enter Weight"
+            android:drawableEnd="@drawable/kg" />
+
+        <!-- TextView for displaying "kg" after user input -->
+        <TextView
+            android:id="@+id/tvWeightUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kg"
+            android:textSize="16sp"
+            android:textColor="#888888"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone" /> <!-- Initially hidden -->
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Input Height with unit (cm) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/heightInputLayout"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/weightInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Enter Height">
+
+        <!-- EditText for entering height -->
+        <EditText
+            android:id="@+id/etHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:importantForAccessibility="yes"
+            android:contentDescription="Enter Height"
+            android:drawableEnd="@drawable/cm"/>
+
+        <!-- TextView for displaying "cm" after user input -->
+        <TextView
+            android:id="@+id/tvHeightUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cm"
+            android:textSize="16sp"
+            android:textColor="#888888"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone" /> <!-- Initially hidden -->
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/genderInputLayout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/heightInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Select Gender"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidth="2dp">
+
+        <!-- Spinner for selecting gender -->
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:importantForAccessibility="yes"
+            android:contentDescription="Select Gender"
+            android:entries="@array/gender_options"
+            android:layout_gravity="center"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/spinner_border"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ageInputLayout"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/genderInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Enter Age">
+
+        <!-- EditText for entering height -->
+        <EditText
+            android:id="@+id/etAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="2"
+            android:importantForAccessibility="yes"
+            android:contentDescription="Enter Age" />
+
+        <!-- TextView for displaying "cm" after user input -->
+        <TextView
+            android:id="@+id/tvAgeUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cm"
+            android:textSize="16sp"
+            android:textColor="#888888"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:text="Submit"
+        android:textSize="14dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@id/ageInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/blue1"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
